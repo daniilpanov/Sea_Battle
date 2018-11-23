@@ -4,6 +4,6 @@ import java.awt.*;
 
 public interface Area
 {
-    void updateArea();
+    void updateArea(Shoots shoot);
     void paintComponent(Graphics g);
 }

@@ -4,14 +4,9 @@ import res.Ship;
 
 import javax.swing.*;
 
-public class Player
+public interface Player
 {
-    private JFrame frame;
-	private Ship[] ships;
-	
-	public Player(JFrame f, JPanel enemyArea)
-    {
-        frame = f;
-        frame.add(enemyArea);
-    }
+    Ship[] ships = new Ship[10];
+    
+    JPanel getArea();
 }

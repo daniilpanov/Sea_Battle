@@ -6,9 +6,9 @@ import javax.swing.*;
 import static res.Math_op.getRandomN;
 
 public class Bot
+    implements Player
 {
     private Timer timer;
-    private Ship[] ships = new Ship[10];
     private EnemyArea enemyArea;
     
     public Bot()
@@ -17,7 +17,7 @@ public class Bot
         {
             for (int j = 0; j < i; j++, s++)
             {
-                ships[s] = new Ship(type);
+                this.ships[s] = new Ship(type);
             }
         }
     
@@ -33,7 +33,7 @@ public class Bot
             
             if (checkShoot(shoot_x, shoot_y))
             {
-                new Shoots(Shoots.BOT, shoot_x, shoot_y);
+                enemyArea.updateArea(new Shoots(Shoots.BOT, shoot_x, shoot_y));
             }
             
             timer.stop();

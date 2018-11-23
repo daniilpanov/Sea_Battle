@@ -73,7 +73,7 @@ public class EnemyArea extends JPanel
 		add(button);
     }
     
-    public void updateArea()
+    public void updateArea(Shoots shoot)
 	{
 	
 	}

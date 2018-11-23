@@ -3,7 +3,6 @@ package play;
 import javax.swing.*;
 
 import main.Main;
-import res.Ship;
 
 public class Play
 {
@@ -25,7 +24,7 @@ public class Play
         
         Bot bot = new Bot();
         
-        new Player(frame, bot.getArea());
+        new You(frame, bot.getArea());
         
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
