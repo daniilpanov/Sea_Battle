@@ -5,7 +5,7 @@ import static res.Math_op.getRandomN;
 
 public class Ship
 {
-    public static final int ONE = 1, TWO = 2, THREE = 3, FOUR = 4,
+    public static final int// ONE = 1, TWO = 2, THREE = 3, FOUR = 4,
                 VERTICAL = 1, HORIZONTAL = 0;
     
     public int x, y, type, direction;
@@ -20,11 +20,11 @@ public class Ship
         this.type = type;
         this.direction = direction;
     }
-    public Ship()
+    public Ship(int type)
     {
         this.player = false;
         System.out.println(direction = getRandomN(0, 1));
-        System.out.println(type = getRandomN(1, 3));
+        System.out.println(this.type = type);
         
         switch (direction)
         {
@@ -38,7 +38,7 @@ public class Ship
 	        	break;
         }
         System.out.println(x + " " + y);
-        
+        System.out.println();
     }
     
     public void drawShip(Graphics g)
@@ -69,8 +69,11 @@ public class Ship
         {
             if (y == y_coordinate)
             {
+                System.out.println("OK, check x");
                 for (int x = this.x; x <= this.type; x++)
                 {
+                    System.out.println(x);
+                    
                     if (x == x_coordinate)
                     {
                         hit = true;
@@ -83,8 +86,11 @@ public class Ship
         {
             if (x == x_coordinate)
             {
+                System.out.println("OK, check y");
                 for (int y = this.y; y <= this.type; y++)
                 {
+                    System.out.println(y);
+                    
                     if (y == y_coordinate)
                     {
                         hit = true;

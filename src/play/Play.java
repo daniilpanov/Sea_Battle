@@ -23,7 +23,9 @@ public class Play
     {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        frame.add(new EnemyArea(frame, new Ship[]{new Ship()}));
+        Bot bot = new Bot();
+        
+        new Player(frame, bot.getArea());
         
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }

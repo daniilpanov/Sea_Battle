@@ -8,17 +8,18 @@ import javax.swing.*;
 import res.Ship;
 
 public class EnemyArea extends JPanel
+		implements Area
 {
 	private Ship[] ships;
 	
-    public EnemyArea(JFrame frame, Ship[] ships)
+    public EnemyArea(Ship[] ships)
     {
     	this.ships = ships;
     	
     	setLayout(null);
     }
     
-	protected void paintComponent(Graphics g)
+	public void paintComponent(Graphics g)
 	{
     	super.paintComponent(g);
     	// Цвет линий
@@ -71,4 +72,9 @@ public class EnemyArea extends JPanel
 
 		add(button);
     }
+    
+    public void updateArea()
+	{
+	
+	}
 }
