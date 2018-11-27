@@ -12,6 +12,9 @@ public class Ship
     public int[] hits = null;
     public boolean player;
     
+    public static Ship[] playerShips = new Ship[20],
+            enemyShips = new Ship[20];
+    
     public Ship(int direction, int type, int x, int y)
     {
         this.player = true;
@@ -19,6 +22,8 @@ public class Ship
         this.y = y;
         this.type = type;
         this.direction = direction;
+        
+        playerShips = this.rewriting(playerShips);
     }
     public Ship(int type)
     {
@@ -39,6 +44,47 @@ public class Ship
         }
         System.out.println(x + " " + y);
         System.out.println();
+        
+        enemyShips = rewriting(enemyShips);
+    }
+    private boolean mayKeep(int x, int y, Ship[] ships)
+    {
+        boolean may = false;
+        Ship ship;
+        
+        for (int i = 0; i < ships.length & (ship = ships[i]) != null; i++)
+        {
+            if (ship.direction == Ship.HORIZONTAL)
+            {
+                for (int j = x; j < ship.type; j++)
+                {
+                    if (this.direction == Ship.VERTICAL)
+                    {
+                    
+                    }
+                }
+            }
+            else
+            {
+            
+            }
+        }
+        
+        return may;
+    }
+    private Ship[] rewriting(Ship[] ships)
+    {
+        // Осуществляем перезапись массива
+        int i = 0;
+    
+        while (ships[i] != null)
+        {
+            i++;
+        }
+        
+        ships[i] = this;
+        
+        return ships;
     }
     
     public void drawShip(Graphics g)
@@ -67,15 +113,17 @@ public class Ship
         
         if (this.direction == HORIZONTAL)
         {
+            System.out.println(y + " - " + y_coordinate);
             if (y == y_coordinate)
             {
                 System.out.println("OK, check x");
                 for (int x = this.x; x <= this.type; x++)
                 {
-                    System.out.println(x);
+                    System.out.println(x + " - " + x_coordinate);
                     
                     if (x == x_coordinate)
                     {
+                        System.out.println("HIT!");
                         hit = true;
                         break;
                     }
@@ -84,15 +132,17 @@ public class Ship
         }
         else
         {
+            System.out.println(x + " - " + x_coordinate);
             if (x == x_coordinate)
             {
                 System.out.println("OK, check y");
                 for (int y = this.y; y <= this.type; y++)
                 {
-                    System.out.println(y);
+                    System.out.println(y + " - " + y_coordinate);
                     
                     if (y == y_coordinate)
                     {
+                        System.out.println("HIT!");
                         hit = true;
                         break;
                     }

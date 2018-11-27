@@ -16,7 +16,7 @@ public class Menu extends JPanel
 {
     private JFrame frame;
     private JButton play = new JButton("Play"),
-            settings = new JButton("Settings"),
+            settings = new JButton("Settings.txt"),
             exit = new JButton("Exit");
     
     public Menu(JFrame fr)

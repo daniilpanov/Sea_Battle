@@ -24,7 +24,7 @@ public class Play
         
         Bot bot = new Bot();
         
-        new You(frame, bot.getArea());
+        You you = new You(frame, bot.getArea());
         
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }

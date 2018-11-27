@@ -1,6 +1,5 @@
 TODO: Create player's area
 TODO: Don't print enemy's ships (black rectangles)
-TODO: Add interface for classes "Bot" & "Player"
 ----------------------------------
 FIXME: Create normal shoots!!!
 FIXME: Ships keep on at each other!!!

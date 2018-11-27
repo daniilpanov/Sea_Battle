@@ -17,14 +17,14 @@ public class Bot
         {
             for (int j = 0; j < i; j++, s++)
             {
-                this.ships[s] = new Ship(type);
+                new Ship(type);
             }
         }
     
-        enemyArea = new EnemyArea(ships);
+        enemyArea = new EnemyArea();
     }
     
-    public void shoot()
+    private void shoot()
     {
         timer = new Timer(getRandomN(1000, 5000), e -> {
             

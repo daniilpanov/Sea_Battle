@@ -10,12 +10,10 @@ import res.Ship;
 public class EnemyArea extends JPanel
 		implements Area
 {
-	private Ship[] ships;
+	private Ship[] ships = Ship.enemyShips;
 	
-    public EnemyArea(Ship[] ships)
+    public EnemyArea()
     {
-    	this.ships = ships;
-    	
     	setLayout(null);
     }
     
@@ -48,12 +46,13 @@ public class EnemyArea extends JPanel
                 addCell(button, x, y);
             }
         }
-    	
+        
     	// Рисуем корабли
-    	for (Ship ship : ships)
+        Ship ship;
+    	for (int i = 0; i < ships.length & (ship = ships[i]) != null; i++)
     	{
-    		ship.drawShip(g);
-    	}
+            ship.drawShip(g);
+        }
 	}
 	
 	// Добавление слушателей на кнопки
@@ -64,9 +63,9 @@ public class EnemyArea extends JPanel
 
 		button.addActionListener(e ->
 		{
-			for (Ship one_ship : ships)
+			for (int i = 0; i < ships.length & ships[i] != null; i++)
 			{
-				System.out.println(one_ship.hit(x, y));
+				System.out.println(ships[i].hit(x, y));
 			}
 		});
 
