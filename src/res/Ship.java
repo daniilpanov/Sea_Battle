@@ -1,6 +1,8 @@
 package res;
 
 import java.awt.*;
+import java.util.ArrayList;
+
 import static res.Math_op.getRandomN;
 
 public class Ship
@@ -12,8 +14,8 @@ public class Ship
     public int[] hits = null;
     public boolean player;
     
-    public static Ship[] playerShips = new Ship[20],
-            enemyShips = new Ship[20];
+    public static ArrayList<Ship> playerShips = new ArrayList<>(),
+            enemyShips = new ArrayList<>();
     
     public Ship(int direction, int type, int x, int y)
     {
@@ -23,7 +25,7 @@ public class Ship
         this.type = type;
         this.direction = direction;
         
-        playerShips = this.rewriting(playerShips);
+        playerShips.add(this);
     }
     public Ship(int type)
     {
@@ -45,7 +47,7 @@ public class Ship
         System.out.println(x + " " + y);
         System.out.println();
         
-        enemyShips = rewriting(enemyShips);
+        enemyShips.add(this);
     }
     private boolean mayKeep(int x, int y, Ship[] ships)
     {
@@ -71,20 +73,6 @@ public class Ship
         }
         
         return may;
-    }
-    private Ship[] rewriting(Ship[] ships)
-    {
-        // Осуществляем перезапись массива
-        int i = 0;
-    
-        while (ships[i] != null)
-        {
-            i++;
-        }
-        
-        ships[i] = this;
-        
-        return ships;
     }
     
     public void drawShip(Graphics g)

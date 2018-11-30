@@ -2,6 +2,7 @@ package play;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
@@ -10,7 +11,7 @@ import res.Ship;
 public class EnemyArea extends JPanel
 		implements Area
 {
-	private Ship[] ships = Ship.enemyShips;
+	private ArrayList<Ship> ships = Ship.enemyShips;
 	
     public EnemyArea()
     {
@@ -49,7 +50,7 @@ public class EnemyArea extends JPanel
         
     	// Рисуем корабли
         Ship ship;
-    	for (int i = 0; i < ships.length & (ship = ships[i]) != null; i++)
+    	for (int i = 0; i < ships.size()-1 & (ship = ships.get(i)) != null; i++)
     	{
             ship.drawShip(g);
         }
@@ -63,10 +64,13 @@ public class EnemyArea extends JPanel
 
 		button.addActionListener(e ->
 		{
-			for (int i = 0; i < ships.length & ships[i] != null; i++)
+		    Ship ship;
+			for (int i = 0; i < ships.size()-1 & (ship = ships.get(i)) != null; i++)
 			{
-				System.out.println(ships[i].hit(x, y));
+				System.out.println(ship.hit(x, y));
+				System.out.println();
 			}
+			System.out.println();
 		});
 
 		add(button);

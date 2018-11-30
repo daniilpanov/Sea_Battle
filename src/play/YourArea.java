@@ -4,11 +4,12 @@ import res.Ship;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class YourArea extends JPanel
         implements Area
 {
-    private Ship[] ships = Ship.playerShips;
+    private ArrayList<Ship> ships = Ship.playerShips;
     
     public YourArea()
     {

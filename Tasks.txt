@@ -4,3 +4,4 @@ TODO: Don't print enemy's ships (black rectangles)
 FIXME: Create normal shoots!!!
 FIXME: Ships keep on at each other!!!
 FIXME: Ships over the area!
+FIXME: Settings don't saving!
