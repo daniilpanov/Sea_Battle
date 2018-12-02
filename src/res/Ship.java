@@ -13,12 +13,14 @@ public class Ship
     public int x, y, type, direction;
     public int[] hits = null;
     public boolean player;
+    public int ID;
     
     public static ArrayList<Ship> playerShips = new ArrayList<>(),
             enemyShips = new ArrayList<>();
     
-    public Ship(int direction, int type, int x, int y)
+    public Ship(int direction, int type, int x, int y, int ID)
     {
+        this.ID = ID;
         this.player = true;
         this.x = x;
         this.y = y;
@@ -29,6 +31,14 @@ public class Ship
     }
     public Ship(int type)
     {
+        if (enemyShips.size() > 0)
+        {
+            this.ID = enemyShips.get(enemyShips.size()-1).ID + 1;
+        }
+        else
+        {
+            this.ID = 0;
+        }
         this.player = false;
         System.out.println(direction = getRandomN(0, 1));
         System.out.println(this.type = type);

@@ -1,7 +1,7 @@
-TODO: Create player's area
-TODO: Don't print enemy's ships (black rectangles)
+TODO: Сделать поле для игрока
+TODO: Не рисовать корабли на вражеском поле
+TODO: Изменить принцип проверки на попадание, а точнее, просто его удалить. Сделать проверку: если координаты кнопки и корабля совпадают, то вызывать метод addShip
 ----------------------------------
-FIXME: Create normal shoots!!!
-FIXME: Ships keep on at each other!!!
-FIXME: Ships over the area!
-FIXME: Settings don't saving!
+FIXME: Корабли накладываются друг на друга!
+FIXME: Корабли за пределами поля!
+FIXME: Настройки не сохраняются!

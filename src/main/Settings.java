@@ -42,7 +42,7 @@ public class Settings
         JPanel for_save = new JPanel(new GridLayout(1, 1));
         JButton save = new JButton("Save");
         
-        save.setFont(new Font("Arial", Font.BOLD, 20));
+        save.setFont(new Font("Arial", Font.BOLD, 25));
         
         panel.add(l_nick); panel.add(t_nick);
         for_save.add(save);

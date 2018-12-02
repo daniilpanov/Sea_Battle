@@ -1,0 +1,5 @@
+nickname: Den
+rating: 1000000
+HELLO!!!
+HELLO!!!
+HELLO!!!

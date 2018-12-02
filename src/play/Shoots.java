@@ -1,15 +1,17 @@
 package play;
 
+import java.util.ArrayList;
+
 public class Shoots
 {
     public static final String PLAYER = "PLAYER", BOT = "BOT";
-    public static Shoots[] botShoots = null,
-            playerShoots = null;
+    public static ArrayList<Shoots> botShoots = new ArrayList<>(),
+            playerShoots = new ArrayList<>();
 
     public int x, y;
-    public boolean hit = false;
+    public boolean hit;
 
-    public Shoots(String whose, int x, int y)
+    public Shoots(String whose, int x, int y, boolean hit)
     {
         this.x = x;
         this.y = y;
@@ -17,25 +19,13 @@ public class Shoots
         switch (whose)
         {
             case PLAYER:
-                botShoots = rewriting(botShoots);
+                botShoots.add(this);
                 break;
             case BOT:
-                playerShoots = rewriting(playerShoots);
+                playerShoots.add(this);
                 break;
         }
-    }
-    
-    private Shoots[] rewriting(Shoots[] shoots)
-    {
-        // Осуществляем перезапись массива
-        Shoots[] last_DATA = shoots;
-        shoots = new Shoots[shoots.length];
-        if (last_DATA.length - 1 >= 0)
-        {
-            System.arraycopy(last_DATA, 0, shoots, 0, last_DATA.length);
-        }
-        shoots[shoots.length-1] = this;
         
-        return shoots;
+        this.hit = hit;
     }
 }

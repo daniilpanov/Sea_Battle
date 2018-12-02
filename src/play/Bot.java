@@ -24,7 +24,7 @@ public class Bot
         enemyArea = new EnemyArea();
     }
     
-    private void shoot()
+    /*private void shoot()
     {
         timer = new Timer(getRandomN(1000, 5000), e -> {
             
@@ -40,7 +40,7 @@ public class Bot
         });
         
         timer.start();
-    }
+    }*/
     private boolean checkShoot(int x, int y)
     {
         boolean can = true;
